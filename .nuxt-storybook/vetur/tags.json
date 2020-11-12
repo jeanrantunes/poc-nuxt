@@ -5,12 +5,6 @@
   "LazyLogo": {
     "description": "Auto imported from components/Logo.vue"
   },
-  "Input": {
-    "description": "Auto imported from components/Input/Input.vue"
-  },
-  "LazyInput": {
-    "description": "Auto imported from components/Input/Input.vue"
-  },
   "Link": {
     "description": "Auto imported from components/Button/Link.vue"
   },
@@ -22,5 +16,11 @@
   },
   "LazyForm": {
     "description": "Auto imported from components/Form/Form.vue"
+  },
+  "Input": {
+    "description": "Auto imported from components/Input/Input.vue"
+  },
+  "LazyInput": {
+    "description": "Auto imported from components/Input/Input.vue"
   }
 }

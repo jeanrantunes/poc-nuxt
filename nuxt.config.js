@@ -1,3 +1,5 @@
+import path from 'path'
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -44,7 +46,30 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
   storybook: {
-    addons: ['@storybook/addon-controls', '@storybook/addon-notes'],
+    addons: [
+      '@storybook/addon-controls',
+      '@storybook/addon-notes',
+      {
+        name: '@storybook/addon-storysource',
+        options: {
+          rule: {
+            // test: [/\.stories\.jsx?$/], This is default
+            include: [path.resolve(__dirname, '../src')], // You can specify directories
+          },
+          loaderOptions: {
+            prettierConfig: { printWidth: 80, singleQuote: false },
+          },
+        },
+      },
+      {
+        name: '@storybook/addon-docs',
+        options: {
+          sourceLoaderOptions: {
+            injectStoryParameters: false,
+          },
+        },
+      },
+    ],
     stories: ['~/pages/**/*.stories.js'],
   },
 }
