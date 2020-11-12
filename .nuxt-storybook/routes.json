@@ -1,0 +1,30 @@
+[
+  {
+    "name": "index.stories",
+    "path": "/index.stories",
+    "component": "/Users/jeanrantunes/Documents/Possible/dll/poc/poc-nuxt/poc/pages/index.stories.js",
+    "chunkName": "pages/index.stories",
+    "_name": "_673c31b2"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/Users/jeanrantunes/Documents/Possible/dll/poc/poc-nuxt/poc/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_24e0339a"
+  },
+  {
+    "name": "login.stories",
+    "path": "/login.stories",
+    "component": "/Users/jeanrantunes/Documents/Possible/dll/poc/poc-nuxt/poc/pages/login.stories.js",
+    "chunkName": "pages/login.stories",
+    "_name": "_44b027a0"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/jeanrantunes/Documents/Possible/dll/poc/poc-nuxt/poc/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_5b389083"
+  }
+]
