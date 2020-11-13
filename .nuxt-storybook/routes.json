@@ -2,15 +2,13 @@
   {
     "name": "login",
     "path": "/login",
-    "component": "/Users/henriquemarba/Projects/Possible/poc-dll-nuxt/pages/login.vue",
-    "chunkName": "pages/login",
-    "_name": "_0a2dc890"
+    "component": "/Users/henriquemarba/Projects/Possible/poc-dll-nuxt/pages/login/index.vue",
+    "chunkName": "pages/login/index"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/henriquemarba/Projects/Possible/poc-dll-nuxt/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_40862579"
+    "chunkName": "pages/index"
   }
 ]

@@ -1,5 +1,9 @@
 <template>
-  <div class="container">
+  <div
+    class="container"
+    endpoint="https://asduasgduiasgd"
+    keys='[{"key1":"value"},{"key2":"value"}]'
+  >
     <div>
       <h1 class="title">login</h1>
       <div class="links">
@@ -24,10 +28,23 @@
 </template>
 
 <script>
-import Button from '../components/Button/Link'
+import Button from '@/components/Button/Link'
+import { getAttr, getAttrJson } from '~/helpers/tagAttributes'
+// import { STORIES_HEADING_PAGES } from '~/utils/constants'
+
 export default {
   components: {
     Button,
+  },
+  data() {
+    return {
+      endpoint: '',
+      keys: [],
+    }
+  },
+  mounted() {
+    this.keys = getAttrJson(this, 'keys')
+    this.endpoint = getAttr(this, 'endpoint')
   },
 }
 </script>

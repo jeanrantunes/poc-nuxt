@@ -1,5 +1,13 @@
 import path from 'path'
 
+const alias = (originalPath) => path.resolve(__dirname, originalPath)
+const aliases = (config) => {
+  config.resolve.alias.components = alias('./components')
+  config.resolve.alias.helpers = alias('./helpers')
+  config.resolve.alias.utils = alias('./utils')
+  config.resolve.alias.pages = alias('./pages')
+}
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -43,7 +51,30 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
-  // Storybook
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  build: {
+    filenames: {
+      chunk: () => '[name].js',
+      css: () => '[name].css',
+    },
+    extractCSS: true,
+    extend(config, { loaders: { vue }, ...ctx }) {
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            fix: true,
+          },
+        })
+      }
+      aliases(config)
+
+      return config
+    },
+  },
   storybook: {
     addons: [
       '@storybook/addon-controls',
@@ -99,5 +130,14 @@ export default {
       ],
       plugins: ['@babel/transform-runtime']
     },
+    webpackFinal(config) {
+      aliases(config)
+
+      return config
+    },
+  },
+  env: {
+    storybookPages: 'Pages',
+    storybookComponents: 'Components',
   },
 }

@@ -1,9 +1,11 @@
 <!--- login.stories.mdx -->
 
 import { Meta, Story, Canvas, Preview } from '@storybook/addon-docs/blocks'
-import Login from '~/pages/login'
+import { STORIES_HEADING_PAGES } from '~/utils/constants'
 
-<Meta title="Login Page" component={Login} />
+import Login from '~/pages/login/index'
+
+<Meta title={`${STORIES_HEADING_PAGES}/Login Page`} component={Login} />
 
 # Login page
 
