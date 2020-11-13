@@ -1,55 +1,47 @@
 <template>
   <div
     class="container"
-    endpoint="https://asduasgduiasgd"
+    endpoint="https://poc-dll.free.beeceptor.com/test"
     keys='[{"key1":"value"},{"key2":"value"}]'
   >
     <div>
-      <h1 class="title">login</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <Button title="prop" />
-        <Button title="prop" />
-        <Button title="prop" />
-        <Button title="prop" />
-        <Button title="prop" />
-        <Button title="prop" />
-        <Button title="prop" />
-      </div>
+      <h1 class="title">{{ content }}</h1>
     </div>
   </div>
 </template>
 
 <script>
-import Button from '@/components/Button/Link'
+// import Button from '@/components/Button/Link'
 import { getAttr, getAttrJson } from '~/helpers/tagAttributes'
 // import { STORIES_HEADING_PAGES } from '~/utils/constants'
 
 export default {
   components: {
-    Button,
+    // Button,
   },
   data() {
     return {
       endpoint: '',
       keys: [],
+      content: {},
     }
   },
   mounted() {
     this.keys = getAttrJson(this, 'keys')
     this.endpoint = getAttr(this, 'endpoint')
+
+    this.getLogin(this.endpoint)
+  },
+  methods: {
+    async getLogin(res) {
+      const response = await this.$axios.$get(res)
+      this.content = response
+    },
   },
 }
 </script>
 
-<style scope>
+<style scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;

@@ -23,6 +23,12 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  // env targets
+  env: {
+    storybookPages: 'Pages',
+    storybookComponents: 'Components',
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
 
@@ -51,30 +57,7 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-    filenames: {
-      chunk: () => '[name].js',
-      css: () => '[name].css',
-    },
-    extractCSS: true,
-    extend(config, { loaders: { vue }, ...ctx }) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: {
-            fix: true,
-          },
-        })
-      }
-      aliases(config)
-
-      return config
-    },
-  },
+  // Config storybook/nuxt
   storybook: {
     addons: [
       '@storybook/addon-controls',
@@ -104,6 +87,7 @@ export default {
     stories: ['~/stories/**/*.stories.@(js|mdx)'],
   },
 
+  // Files generate - exclude dir
   generate: {
     exclude: [
       /^\/stories/
@@ -136,8 +120,29 @@ export default {
       return config
     },
   },
-  env: {
-    storybookPages: 'Pages',
-    storybookComponents: 'Components',
+
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  build: {
+    filenames: {
+      chunk: () => '[name].js',
+      css: () => '[name].css',
+    },
+    extractCSS: true,
+    extend(config, { loaders: { vue }, ...ctx }) {
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            fix: true,
+          },
+        })
+      }
+      aliases(config)
+
+      return config
+    },
   },
 }
