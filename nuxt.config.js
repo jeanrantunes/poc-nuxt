@@ -1,5 +1,13 @@
 import path from 'path'
 
+const alias = (originalPath) => path.resolve(__dirname, originalPath)
+const aliases = (config) => {
+  config.resolve.alias.components = alias('./components')
+  config.resolve.alias.helpers = alias('./helpers')
+  config.resolve.alias.utils = alias('./utils')
+  config.resolve.alias.pages = alias('./pages')
+}
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -50,6 +58,22 @@ export default {
       css: () => '[name].css',
     },
     extractCSS: true,
+    extend(config, { loaders: { vue }, ...ctx }) {
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            fix: true,
+          },
+        })
+      }
+      aliases(config)
+
+      return config
+    },
   },
   storybook: {
     addons: [
@@ -78,5 +102,14 @@ export default {
       },
     ],
     stories: ['~/pages/**/*.stories.@(js|mdx)'],
+    webpackFinal(config) {
+      aliases(config)
+
+      return config
+    },
+  },
+  env: {
+    storybookPages: 'Pages',
+    storybookComponents: 'Components',
   },
 }
