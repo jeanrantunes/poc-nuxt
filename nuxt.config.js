@@ -43,14 +43,7 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-    filenames: {
-      chunk: () => '[name].js',
-      css: () => '[name].css',
-    },
-    extractCSS: true,
-  },
+  // Storybook
   storybook: {
     addons: [
       '@storybook/addon-controls',
@@ -77,6 +70,34 @@ export default {
         },
       },
     ],
-    stories: ['~/pages/**/*.stories.@(js|mdx)'],
+    stories: ['~/stories/**/*.stories.@(js|mdx)'],
+  },
+
+  generate: {
+    exclude: [
+      /^\/stories/
+    ]
+  },
+
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  build: {
+    extractCSS: true,
+    filenames : {
+      app: '[name].js',
+      chunk: '[name].js',
+      css: '[name].css',
+    },
+    babel: {
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            useBuiltIns: 'entry',
+            corejs: 3
+          }
+        ]
+      ],
+      plugins: ['@babel/transform-runtime']
+    },
   },
 }

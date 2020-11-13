@@ -12,6 +12,12 @@
           Documentation
         </a>
         <Button title="prop" />
+        <Button title="prop" />
+        <Button title="prop" />
+        <Button title="prop" />
+        <Button title="prop" />
+        <Button title="prop" />
+        <Button title="prop" />
       </div>
     </div>
   </div>
@@ -26,7 +32,7 @@ export default {
 }
 </script>
 
-<style>
+<style scope>
 .container {
   margin: 0 auto;
   min-height: 100vh;

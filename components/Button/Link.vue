@@ -1,5 +1,5 @@
 <template>
-  <a href="https://nuxtjs.org" ref="anchor" endpoint="https://endpoint.com">
+  <a href="https://nuxtjs.org" endpoint="https://endpoint.com">
     NuxtJs - {{ title }}
   </a>
 </template>
@@ -11,9 +11,6 @@ export default {
       type: String,
       default: '',
     },
-  },
-  mounted() {
-    console.log(this.$el)
   },
 }
 </script>
