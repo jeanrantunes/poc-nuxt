@@ -1,10 +1,4 @@
 {
-  "Form": {
-    "description": "Auto imported from components/Form/Form.vue"
-  },
-  "LazyForm": {
-    "description": "Auto imported from components/Form/Form.vue"
-  },
   "Link": {
     "description": "Auto imported from components/Button/Link.vue"
   },
@@ -16,5 +10,11 @@
   },
   "LazyInput": {
     "description": "Auto imported from components/Input/Input.vue"
+  },
+  "Form": {
+    "description": "Auto imported from components/Form/Form.vue"
+  },
+  "LazyForm": {
+    "description": "Auto imported from components/Form/Form.vue"
   }
 }
