@@ -7,8 +7,9 @@ import NuxtLoading from './components/nuxt-loading.vue'
 import '../node_modules/@nuxtjs/tailwindcss/lib/files/tailwind.css'
 
 import _6f6c098b from '../layouts/default.vue'
+import _1a3aed2e from '../layouts/dll.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_dll": sanitizeComponent(_1a3aed2e) }
 
 export default {
   render (h, props) {

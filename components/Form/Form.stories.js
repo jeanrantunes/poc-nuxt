@@ -1,5 +1,5 @@
 export default {
-  title: 'Form',
+  title: 'Components/Form',
 }
 
 export const NuxtWebsite = () => '<Form />'

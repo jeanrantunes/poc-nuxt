@@ -1,7 +1,7 @@
 import Home from './index'
 
 export default {
-  title: 'Home Page',
+  title: 'Pages/Home Page',
 }
 
-export const loginPage = () => Home
+export const homePage = () => Home

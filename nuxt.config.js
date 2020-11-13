@@ -44,7 +44,13 @@ export default {
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    filenames: {
+      chunk: () => '[name].js',
+      css: () => '[name].css',
+    },
+    extractCSS: true,
+  },
   storybook: {
     addons: [
       '@storybook/addon-controls',
@@ -58,6 +64,7 @@ export default {
           },
           loaderOptions: {
             prettierConfig: { printWidth: 80, singleQuote: false },
+            injectStoryParameters: false,
           },
         },
       },
@@ -70,6 +77,6 @@ export default {
         },
       },
     ],
-    stories: ['~/pages/**/*.stories.js'],
+    stories: ['~/pages/**/*.stories.@(js|mdx)'],
   },
 }

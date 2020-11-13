@@ -11,21 +11,19 @@
         >
           Documentation
         </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+        <Button title="prop" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Button from '../components/Button/Link'
+export default {
+  components: {
+    Button,
+  },
+}
 </script>
 
 <style>

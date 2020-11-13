@@ -1,0 +1,45 @@
+<!--- index.stories.mdx -->
+
+import { Meta, Story, Canvas, Preview } from '@storybook/addon-docs/blocks'
+import Home from './index'
+
+<Meta title="Home Page" component={Home} />
+
+# Home page
+
+With `MDX` we can define a story for `Home` right in the middle of our
+Markdown documentation.
+
+```html
+<div class="container">
+  <div>
+    <h1 class="title">poc</h1>
+    <div class="links">
+      <a
+        href="https://nuxtjs.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button--green"
+      >
+        Documentation
+      </a>
+      <a
+        href="https://github.com/nuxt/nuxt.js"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button--grey"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</div>
+```
+
+<!--- This is your Story template function, shown here in React -->
+
+export const Template = () => Home
+
+<Canvas>
+  <Story name="Home Page">{Template.bind()}</Story>
+</Canvas>

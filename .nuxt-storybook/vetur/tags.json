@@ -1,21 +1,15 @@
 {
-  "Logo": {
-    "description": "Auto imported from components/Logo.vue"
+  "Form": {
+    "description": "Auto imported from components/Form/Form.vue"
   },
-  "LazyLogo": {
-    "description": "Auto imported from components/Logo.vue"
+  "LazyForm": {
+    "description": "Auto imported from components/Form/Form.vue"
   },
   "Link": {
     "description": "Auto imported from components/Button/Link.vue"
   },
   "LazyLink": {
     "description": "Auto imported from components/Button/Link.vue"
-  },
-  "Form": {
-    "description": "Auto imported from components/Form/Form.vue"
-  },
-  "LazyForm": {
-    "description": "Auto imported from components/Form/Form.vue"
   },
   "Input": {
     "description": "Auto imported from components/Input/Input.vue"

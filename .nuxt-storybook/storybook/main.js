@@ -1,5 +1,5 @@
-const stories = ['../../components/**/*.stories.@(ts|js)','../../pages/**/*.stories.js']
-const addons  = ["@storybook\u002Faddon-essentials","@storybook\u002Faddon-controls","@storybook\u002Faddon-notes",{name:"@storybook\u002Faddon-storysource",options:{rule:{include:["\u002FUsers\u002Fjeanrantunes\u002FDocuments\u002FPossible\u002Fdll\u002Fpoc\u002Fpoc-nuxt\u002Fsrc"]},loaderOptions:{prettierConfig:{printWidth:80,singleQuote:false}}}},{name:"@storybook\u002Faddon-docs",options:{sourceLoaderOptions:{injectStoryParameters:false}}}]
+const stories = ['../../components/**/*.stories.@(ts|js)','../../pages/**/*.stories.@(js|mdx)']
+const addons  = ["@storybook\u002Faddon-essentials","@storybook\u002Faddon-controls","@storybook\u002Faddon-notes",(function(a){return {name:"@storybook\u002Faddon-storysource",options:{rule:{include:["\u002FUsers\u002Fjeanrantunes\u002FDocuments\u002FPossible\u002Fdll\u002Fpoc\u002Fpoc-nuxt\u002Fsrc"]},loaderOptions:{prettierConfig:{printWidth:80,singleQuote:a},injectStoryParameters:a}}}}(false)),{name:"@storybook\u002Faddon-docs",options:{sourceLoaderOptions:{injectStoryParameters:false}}}]
 
 function nuxifyStorybook(storybookConfig) {
   return {

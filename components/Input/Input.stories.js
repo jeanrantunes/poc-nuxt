@@ -1,5 +1,5 @@
 export default {
-  title: 'Input',
+  title: 'Components/Input',
 }
 
 export const NuxtWebsite = () => '<Input />'
