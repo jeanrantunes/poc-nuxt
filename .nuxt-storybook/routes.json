@@ -7,6 +7,13 @@
     "_name": "_7e0bc2c6"
   },
   {
+    "name": "poc",
+    "path": "/poc",
+    "component": "/Users/jeanrantunes/Documents/Possible/dll/poc/poc-nuxt/poc/pages/poc/index.vue",
+    "chunkName": "pages/poc/index",
+    "_name": "_4b0f6410"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/jeanrantunes/Documents/Possible/dll/poc/poc-nuxt/poc/pages/index.vue",

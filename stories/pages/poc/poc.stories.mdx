@@ -1,0 +1,37 @@
+<!--- login.stories.mdx -->
+
+import { Meta, Story, Canvas, Preview } from '@storybook/addon-docs/blocks'
+import { STORIES_HEADING_PAGES } from 'utils/constants'
+
+import Poc from 'pages/poc'
+
+<Meta title={`${STORIES_HEADING_PAGES}/Poc`} component={Poc} />
+
+# Poc page
+
+```html
+<div class="container">
+  <div>
+    <h1 class="title">login</h1>
+    <div class="links">
+      <a
+        href="https://nuxtjs.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button--green"
+      >
+        Documentation
+      </a>
+      <a href="https://nuxtjs.org"> NuxtJs - prop </a>
+    </div>
+  </div>
+</div>
+```
+
+<!--- This is your Story template function, shown here in React -->
+
+export const Template = () => Poc
+
+<Canvas>
+  <Story name="Poc Page">{Template.bind()}</Story>
+</Canvas>

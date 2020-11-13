@@ -49,7 +49,9 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    retry: { retries: 3 },
+  },
 
   // Config storybook/nuxt
   storybook: {
