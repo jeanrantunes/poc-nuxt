@@ -23,12 +23,6 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  // env targets
-  env: {
-    storybookPages: 'Pages',
-    storybookComponents: 'Components',
-  },
-
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
 
@@ -85,19 +79,21 @@ export default {
       },
     ],
     stories: ['~/stories/**/*.stories.@(js|mdx)'],
+    webpackFinal(config) {
+      aliases(config)
+      return config
+    },
   },
 
   // Files generate - exclude dir
   generate: {
-    exclude: [
-      /^\/stories/
-    ]
+    exclude: [/^\/stories/],
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true,
-    filenames : {
+    filenames: {
       app: '[name].js',
       chunk: '[name].js',
       css: '[name].css',
@@ -108,13 +104,24 @@ export default {
           '@babel/preset-env',
           {
             useBuiltIns: 'entry',
-            corejs: 3
-          }
-        ]
+            corejs: 3,
+          },
+        ],
       ],
-      plugins: ['@babel/transform-runtime']
+      plugins: ['@babel/transform-runtime'],
     },
-    webpackFinal(config) {
+    extend(config, { loaders: { vue }, ...ctx }) {
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            fix: true,
+          },
+        })
+      }
       aliases(config)
 
       return config
