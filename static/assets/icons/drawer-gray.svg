@@ -1,0 +1,24 @@
+<svg viewBox="0 0 61 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M60.580625,19.8087273 L45.330625,0.717818182 C44.9684375,0.263454545 44.4194375,0 43.84375,0 L17.15625,0 C16.57675,0 16.02775,0.263454545 15.669375,0.717818182 L0.419375,19.8087273 C0.1486875,20.1485455 0,20.5685455 0,21 L0,38.1818182 C0,40.2894545 1.708,42 3.8125,42 L57.1875,42 C59.292,42 61,40.2894545 61,38.1818182 L61,21 C61,20.5647273 60.8513125,20.1447273 60.580625,19.8087273 Z M57,23.2857143 L43.75,23.2857143 L36.1785714,31 L24.8214286,31 L17.25,23.2857143 L4,23.2857143 L4,22.0321429 L18.1585714,4 L42.8376429,4 L56.9962143,22.0321429 L56.9962143,23.2857143 L57,23.2857143 Z" id="icon-drawer-gray-path-1"></path>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-438.000000, -141.000000)">
+            <g>
+                <g transform="translate(438.000000, 141.000000)">
+                    <g>
+                        <g>
+                            <mask id="icon-drawer-gray-mask-1" fill="white">
+                                <use xlink:href="#icon-drawer-gray-path-1"></use>
+                            </mask>
+                            <use fill="#cccccc" fill-rule="nonzero" xlink:href="#icon-drawer-gray-path-1"></use>
+                            <g mask="url(#icon-drawer-gray-mask-1)" fill="#cccccc">
+                                <g transform="translate(-18.000000, -16.000000)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
