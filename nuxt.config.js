@@ -1,4 +1,5 @@
 import path from 'path'
+import FileManagerPlugin from 'filemanager-webpack-plugin'
 
 const alias = (originalPath) => path.resolve(__dirname, originalPath)
 const aliases = (config) => {
@@ -128,5 +129,29 @@ export default {
 
       return config
     },
+    plugins: [
+      new FileManagerPlugin({
+        events: {
+          onStart: {
+            delete: [path.resolve(__dirname, 'dist/versions/assets.zip')],
+          },
+          onEnd: {
+            archive: [
+              {
+                source: path.resolve(__dirname, `dist/_nuxt`),
+                destination: path.resolve(__dirname, `dist/versions/_nuxt.zip`),
+              },
+              {
+                source: path.resolve(__dirname, `static/assets`),
+                destination: path.resolve(
+                  __dirname,
+                  `dist/versions/assets.zip`
+                ),
+              },
+            ],
+          },
+        },
+      }),
+    ],
   },
 }
