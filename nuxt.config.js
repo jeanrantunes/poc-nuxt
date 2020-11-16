@@ -1,5 +1,6 @@
 import path from 'path'
 import FileManagerPlugin from 'filemanager-webpack-plugin'
+import { version } from './package.json'
 
 const alias = (originalPath) => path.resolve(__dirname, originalPath)
 const aliases = (config) => {
@@ -139,7 +140,10 @@ export default {
             archive: [
               {
                 source: path.resolve(__dirname, `dist/_nuxt`),
-                destination: path.resolve(__dirname, `dist/versions/_nuxt.zip`),
+                destination: path.resolve(
+                  __dirname,
+                  `dist/versions/_nuxt-v${version}.zip`
+                ),
               },
               {
                 source: path.resolve(__dirname, `static/assets`),

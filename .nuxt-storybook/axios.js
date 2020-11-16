@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import defu from 'defu'
+import axiosRetry from 'axios-retry'
 
 // Axios.prototype cannot be modified
 const axiosExtra = {
@@ -63,6 +64,7 @@ const createAxiosInstance = axiosOptions => {
   // Setup interceptors
 
   setupProgress(axios)
+  axiosRetry(axios, {"retries":3})
 
   return axios
 }
